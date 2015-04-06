@@ -1467,5 +1467,5 @@ main = do
     runStderrLoggingT $ withSqlitePool "workspace.db3" openConnectionCount $ \pool -> liftIO $ do
         runResourceT $ flip runSqlPool pool $ do
             runMigration migrateAll
-            insert $ User "Max" "Max" "Admin"
+            --insert $ User "Max" "Max" "Admin"
         warp 3001 $ WS pool
